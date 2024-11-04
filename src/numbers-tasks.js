@@ -261,8 +261,17 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  let prev = 1;
+  let current = 0;
+  for (let i = 1; i <= index; ) {
+    const storage = current;
+    current = prev + current;
+    prev = storage;
+    i += 1;
+  }
+
+  return current;
 }
 
 /**
